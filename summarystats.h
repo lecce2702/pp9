@@ -1,4 +1,4 @@
 
-float SL_getAvg(int eingabe);
-float SL_getStddev(int eingabe, float avg);
-int *SL_getIntStream(FILE *fp, int *n);
+double SL_getAvg(double eingabe);
+double SL_getStddev(double eingabe, double avg);
+double * SL_getDoubStream(FILE *fp, int *n);

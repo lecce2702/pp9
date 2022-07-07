@@ -9,8 +9,8 @@ const char VERSIONSNR[] = "0.1";
 
 int main(int argc, char* argv[]){
 	int option;
-	int expected_value;
-	int std_deviation;
+	double expected_value;
+	double std_deviation;
 	int amount_of_values;
 	FILE * ptr = fopen ("output_stream", "w");
 	if(ptr == NULL){
@@ -30,11 +30,16 @@ int main(int argc, char* argv[]){
 			exit(0);
 		case 'g':
 			printf("Eingabe des Erwartungswerts\n");
-			scanf("%d", &expected_value);
+			scanf("%lf", &expected_value);
 			printf("Eingabe der Standardabweichung\n");
-			scanf("%d", &std_deviation);
+			scanf("%lf", &std_deviation);
 			printf("Eingabe der Anzahl der Zufallswerte\n");
 			scanf("%d", &amount_of_values);
+			if (amount_of_values < 100){
+				printf("Bitte mindestens 100 eingeben, daher automatisch 100 gewaehlt\n");
+				amount_of_values = 100;
+				exit(0);
+			}
 			break;
 
 		default:
